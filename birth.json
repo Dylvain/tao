@@ -1,0 +1,57 @@
+{
+  "schema": "tao.gaia.birth.v1",
+  "status": "public_inert_contract",
+  "subject": "new_sovereign_tao",
+  "seed": {
+    "observer_model": "C0",
+    "specialized_centers": [],
+    "basal_loop": [
+      "persist",
+      "observe",
+      "compare",
+      "residual",
+      "vary",
+      "test",
+      "retain_or_rollback"
+    ]
+  },
+  "inheritance": {
+    "included": [
+      "runtime",
+      "default_genome",
+      "reflexes",
+      "development_kit",
+      "builtin_heritage",
+      "canonical_theory"
+    ],
+    "optional": [
+      "explicitly_selected_inert_methods"
+    ],
+    "excluded": [
+      "identity",
+      "private_memory",
+      "conversations",
+      "credentials",
+      "permissions",
+      "provider_configuration"
+    ]
+  },
+  "birth": {
+    "location": "owner_selected_machine",
+    "identity": "fresh_local",
+    "story_authority": "human",
+    "activation": "manual"
+  },
+  "adaptation": {
+    "machine_observation": "local_explicit",
+    "reasoner": "owner_selected",
+    "reasoner_required": false,
+    "automatic_ai_calls": false,
+    "first_center": "only_after_reproducible_residual_and_explicit_owner_decision"
+  },
+  "permissions": {
+    "read": "none",
+    "execution": "not_granted"
+  },
+  "executable": false
+}

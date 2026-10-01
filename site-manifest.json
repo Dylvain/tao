@@ -1,0 +1,63 @@
+{
+  "schema": "gaia.static-site.v1",
+  "version": "0.10.6",
+  "mode": "signed",
+  "files": {
+    "SHA256SUMS": {
+      "sha256": "84994fdbfb33518dcbedacbb19728193a976bf29c1cf47fec707093c8bcda22e",
+      "size": 181
+    },
+    "TAO_LINUX_0.10.6.run": {
+      "sha256": "82768956eb8448c16cd889d54c7e9b23c618a7d7dd7c606015568a543f9ab267",
+      "size": 1265301
+    },
+    "Tao_Linux_0.10.6_source.zip": {
+      "sha256": "7d9948f0c65e836b6422a2399108fe1cc478dd3df10005cf3801b0f97d66a803",
+      "size": 947809
+    },
+    "_headers": {
+      "sha256": "8e70c9b3b2f6ffcece798f3c57c56740d9cc1d008a60f512f50533e9a3500c94",
+      "size": 389
+    },
+    "app.js": {
+      "sha256": "170af91f56e8a00db81e588d99d91764a9c4a9912ae3ed315958c32b96a14878",
+      "size": 23268
+    },
+    "birth.json": {
+      "sha256": "a1bdcf63cf0d2e8aec527ef26625b26f5011b2ef123290d29400359cd23fff94",
+      "size": 1244
+    },
+    "catalogue.json": {
+      "sha256": "4f35154a614a87cf07f54f3e89eb74a0c30527780c10ae623287f22def76eaac",
+      "size": 9528
+    },
+    "index.html": {
+      "sha256": "db30d4fb8fa5cb8dcd2ee253a5c7cbd42eb553de6fd226de5506fff933ce8610",
+      "size": 15812
+    },
+    "portal.json": {
+      "sha256": "f8e2713fd270c7d6768410a532c8e90377edd3196ae3790bb3ac90294a71d34f",
+      "size": 636
+    },
+    "release-public.pem": {
+      "sha256": "df3f560cdf81d257dfc7bdc527756f51250423d046c3f2feb63a546725f73e0d",
+      "size": 113
+    },
+    "release.json": {
+      "sha256": "a5f43fadea3cab372ca696f3a662b2a39b709cb6ec923dc2e16a1abe54b3f6d7",
+      "size": 1480
+    },
+    "release.sig": {
+      "sha256": "1f71c4651da8341909ce71d14723b93e6d37dbd5a3e7086cdc61465109c9af79",
+      "size": 64
+    },
+    "signing.json": {
+      "sha256": "aae66114f0eb4d1259fd2e3072584137c7fbb155ff346fc0362c2e138a056b8e",
+      "size": 284
+    },
+    "style.css": {
+      "sha256": "3c434a0715d6d8be4f1055c2901e8efbaf1ebc18ac368ada1a6c326d22f1a5b7",
+      "size": 17390
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "catalogue_id": "gaia.initial-guides",
+  "catalogue_version": "1.0.0",
+  "title": "Premières méthodes de Gaia",
+  "description": "Trois guides initiaux proposés par le mainteneur de Tao pour comprendre un besoin, examiner une connexion et relire une expérience. Ce sont des textes à adapter et à vérifier, sans preuve empirique de réussite ni contribution communautaire revendiquée. Leur consultation et leur téléchargement ne déclenchent aucune action dans Tao.",
+  "status": "curated_initial_guidance",
+  "entries": [
+    {
+      "id": "clarify-need",
+      "version": "1.0.0",
+      "category": "comprehension",
+      "title": "Clarifier un besoin avant de chercher une solution",
+      "summary": "Partir d'une situation racontée pour distinguer ce qui est observé, ce qui est souhaité et la petite vérification qui permettrait d'avancer.",
+      "applicability": [
+        "Une personne décrit une difficulté ou un objectif, mais le résultat attendu reste ambigu.",
+        "Le besoin peut être examiné avec les personnes concernées avant de décider d'une action."
+      ],
+      "limits": [
+        "Une reformulation reste une interprétation à corriger avec la personne ; elle ne prouve ni la cause ni la résolution.",
+        "Ce guide n'attribue aucun mandat et ne remplace pas un avis professionnel lorsque la situation le demande."
+      ],
+      "steps": [
+        "Décrire un cas concret récent dans son espace privé : que s'est-il passé, et selon quelle source ? Séparer l'observation de l'interprétation.",
+        "Formuler le résultat souhaité avec les personnes concernées, les contraintes à respecter et ce que l'on souhaite continuer à apprendre ou pratiquer.",
+        "Nommer l'écart qui reste ouvert. Si plusieurs besoins se contredisent, conserver ce désaccord sans imposer une solution commune.",
+        "Choisir la plus petite comparaison utile entre la situation actuelle et le résultat attendu. Préciser ce qui serait observé en cas de progrès et en cas d'échec.",
+        "Relire la formulation avant de la conserver. Garder le besoin ouvert tant qu'un résultat réel et attribué n'a pas été constaté."
+      ],
+      "expected_evidence": [
+        "Un récit attribué, un résultat attendu et des contraintes explicitement relus.",
+        "Une observation comparable avant et après la petite action choisie, avec les limites et les écarts encore présents."
+      ],
+      "counterexample": "Le besoin est marqué résolu parce qu'une réponse paraît convaincante, alors que la difficulté se reproduit dans le cas décrit. La formulation peut être utile, mais le résultat attendu n'est pas encore observé.",
+      "permissions": {
+        "read": "none",
+        "execution": "not_granted"
+      },
+      "origin": {
+        "kind": "local_maintainer",
+        "source": "tao_repository",
+        "note": "Guide initial rédigé pour Gaia à partir des principes de suivi des besoins de Tao. Aucun récit privé ni résultat communautaire n'est reproduit ; l'efficacité de ce guide reste à évaluer dans chaque contexte."
+      },
+      "status": "curated_initial_guidance",
+      "executable": false
+    },
+    {
+      "id": "connect-capabilities",
+      "version": "1.0.0",
+      "category": "connection",
+      "title": "Examiner les capacités avant de connecter un outil",
+      "summary": "Définir l'usage, les informations nécessaires et les droits minimaux avant de décider si une connexion existante convient.",
+      "applicability": [
+        "Un besoin semble nécessiter l'accès à un outil, un compte ou un appareil déterminé.",
+        "La personne propriétaire peut vérifier les capacités réellement disponibles et choisir les accès qu'elle accepte."
+      ],
+      "limits": [
+        "Ce guide ne crée aucun connecteur et ne garantit pas qu'un service ou un appareil soit pris en charge par Tao.",
+        "Une connexion technique ne constitue pas une autorisation d'utiliser toutes les données ou toutes les actions disponibles.",
+        "Les secrets restent dans le mécanisme d'authentification de l'outil concerné ; ils ne sont jamais demandés dans une fiche Gaia."
+      ],
+      "steps": [
+        "Nommer la tâche précise, l'outil ou l'appareil concerné et les données strictement nécessaires. Indiquer qui peut autoriser leur utilisation.",
+        "Examiner la documentation et les capacités présentes dans l'installation choisie. Distinguer une connexion livrée, une fonction à construire et une simple idée.",
+        "Décrire les droits souhaités, la durée et le périmètre de l'essai. Si un mécanisme disponible ne permet pas ces limites, conserver le blocage et rechercher une option plus restreinte.",
+        "Si la personne choisit de poursuivre, utiliser séparément le parcours de connexion propre à l'outil. Vérifier l'identité du compte et l'endroit où les données seront traitées.",
+        "Sur un exemple explicitement autorisé et peu sensible, comparer la capacité attendue à celle réellement observée. Conserver les accès refusés et les limites détectées.",
+        "Vérifier comment arrêter l'essai et révoquer l'accès. Revoir l'autorisation avant tout élargissement de la tâche."
+      ],
+      "expected_evidence": [
+        "Une capacité réellement disponible, un propriétaire identifié et un périmètre d'essai explicitement accepté.",
+        "Le résultat du cas autorisé, les limites rencontrées et une méthode de révocation vérifiée dans l'outil concerné."
+      ],
+      "counterexample": "Un compte est connecté et permet techniquement une écriture, mais la personne n'a autorisé qu'une lecture. La connexion fonctionne ; l'écriture reste interdite et le besoin peut demeurer ouvert.",
+      "permissions": {
+        "read": "none",
+        "execution": "not_granted"
+      },
+      "origin": {
+        "kind": "local_maintainer",
+        "source": "tao_repository",
+        "note": "Guide initial du mainteneur, fondé sur la distinction entre capacité et autorité dans Tao. Il ne revendique aucune intégration métier nouvelle ni aucun essai de compte réel."
+      },
+      "status": "curated_initial_guidance",
+      "executable": false
+    },
+    {
+      "id": "integrate-reviewed-experiment",
+      "version": "1.0.0",
+      "category": "integration",
+      "title": "Évaluer une petite amélioration avant de la retenir",
+      "summary": "Relier une expérience à un besoin réel, relire ses changements, puis distinguer le résultat des tests du résultat vécu après une intégration choisie.",
+      "applicability": [
+        "Une amélioration de Tao répond à un besoin documenté et peut être préparée dans un atelier disponible.",
+        "La personne peut examiner les changements, autoriser les tests et choisir séparément une intégration."
+      ],
+      "limits": [
+        "Un candidat, des tests réussis ou un programme installé ne suffisent pas à déclarer le besoin intégré.",
+        "Les fonctions disponibles dépendent de l'installation. Ce texte ne prépare, ne teste et n'installe aucun code.",
+        "Une évolution du format de données demande une migration et un retour arrière explicites. Une expérience sur un appareil ne déploie pas automatiquement une autre installation."
+      ],
+      "steps": [
+        "Relier la proposition à une histoire reproductible, au résultat souhaité et aux contraintes. Définir la preuve attendue, un contre-exemple et le coût de complexité acceptable.",
+        "Choisir la plus petite expérience utile et les ressources qu'elle peut utiliser. Vérifier les prérequis de l'atelier et le lieu d'exécution choisi.",
+        "Préparer un candidat uniquement par une action explicitement choisie dans Tao. Relire le détail des changements et les accès nécessaires avant d'autoriser ses tests.",
+        "Comparer les tests au candidat exact et au contre-exemple retenu. Si les sources ou le contexte changent, réexaminer le candidat avant toute intégration.",
+        "Avant de choisir une intégration, vérifier le moyen de retour arrière et la préservation des données privées. Garder les essais incomplets et leurs limites dans l'historique.",
+        "Après une intégration choisie, observer le besoin initial dans son contexte réel. Attribuer le retour obtenu, noter les échecs et ne fermer le besoin que sur un résultat vérifié."
+      ],
+      "expected_evidence": [
+        "Des changements relus, un rapport de tests rattaché au candidat exact et un contre-exemple examiné.",
+        "Un résultat d'usage attribué sur l'histoire initiale, distinct du rapport de tests, ainsi que les limites et résidus conservés."
+      ],
+      "counterexample": "Les tests passent sur un candidat, puis une modification supplémentaire est ajoutée avant l'installation. Le rapport précédent ne vérifie pas ce nouvel état ; il faut une nouvelle revue et les vérifications adaptées.",
+      "permissions": {
+        "read": "none",
+        "execution": "not_granted"
+      },
+      "origin": {
+        "kind": "local_maintainer",
+        "source": "tao_repository",
+        "note": "Guide initial du mainteneur inspiré du parcours d'atelier et du suivi des résultats de Tao. Ce guide n'est pas le compte rendu d'une amélioration exécutée ou d'une réussite mesurée."
+      },
+      "status": "curated_initial_guidance",
+      "executable": false
+    }
+  ]
+}

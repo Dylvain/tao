@@ -1,0 +1,20 @@
+{
+  "version": "0.10.6",
+  "download_status": "signed",
+  "reason": "Version signée vérifiée lors de la construction du site. Vérifier la clé de confiance avant installation.",
+  "installer": {
+    "name": "TAO_LINUX_0.10.6.run",
+    "url": "TAO_LINUX_0.10.6.run"
+  },
+  "source_archive": {
+    "name": "Tao_Linux_0.10.6_source.zip",
+    "url": "Tao_Linux_0.10.6_source.zip"
+  },
+  "signature": {
+    "manifest": "release.json",
+    "signature": "release.sig",
+    "metadata": "signing.json",
+    "public_key": "release-public.pem",
+    "public_key_sha256": "07cdcb6a5458ddae980e0aba1684e249d6da543305f3ddee22260fd72094f99f"
+  }
+}
