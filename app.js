@@ -2,7 +2,7 @@
 (function (root) {
   'use strict';
 
-  const VERSION = '0.10.7';
+  const VERSION = '0.10.8';
   const CATEGORIES = Object.freeze({comprehension: 'Comprendre', connection: 'Relier', integration: 'Améliorer'});
   const SYMBOLS = Object.freeze({comprehension: 'α', connection: '∿', integration: '↗'});
 
@@ -199,7 +199,7 @@
       const platform = byId('platform').value;
       const panel = byId('platform-guidance');
       panel.replaceChildren();
-      const text = platform === 'linux' ? 'Sur Debian ou Ubuntu, installe Tao 0.10.7 comme une application. Sur un autre Linux, l’installateur universel reste disponible. Python 3.9 ou plus est nécessaire.' : platform ? 'Tu peux piloter un Tao accessible depuis le navigateur de cet appareil. Le moteur d’exécution local est fourni pour Linux uniquement ; aucun installateur natif n’est livré pour ce système.' : 'Choisis ton système pour voir le chemin disponible. Tu peux changer ce choix à tout moment.';
+      const text = platform === 'linux' ? 'Sur Debian ou Ubuntu, installe Tao 0.10.8 comme une application. Sur un autre Linux, l’installateur universel reste disponible. Python 3.9 ou plus est nécessaire.' : platform ? 'Tu peux piloter un Tao accessible depuis le navigateur de cet appareil. Le moteur d’exécution local est fourni pour Linux uniquement ; aucun installateur natif n’est livré pour ce système.' : 'Choisis ton système pour voir le chemin disponible. Tu peux changer ce choix à tout moment.';
       panel.append(element(document, 'p', text));
       if (platform && platform !== 'linux') {
         const link = element(document, 'a', 'Retrouver une installation existante ↗', 'text-button'); link.href = '#retrouver'; panel.append(link);

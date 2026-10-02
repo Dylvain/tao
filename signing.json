@@ -1,7 +1,7 @@
 {
   "algorithm": "ed25519",
   "manifest": "release.json",
-  "manifest_sha256": "b69d674dc53a4273bb465fee4b9f2bf054088b0683ca1d9466bc44c07575e530",
+  "manifest_sha256": "d96351fb4a8fe0b8566163c1cd0638dd0f8becb0d60d91022a7529e51f741153",
   "public_key_sha256": "07cdcb6a5458ddae980e0aba1684e249d6da543305f3ddee22260fd72094f99f",
   "schema": 1,
   "signature": "release.sig"

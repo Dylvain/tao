@@ -1,21 +1,21 @@
 {
   "schema": "tao.release.v2",
-  "version": "0.10.7",
+  "version": "0.10.8",
   "update": {
-    "minimum_runtime": "0.10.6",
+    "minimum_runtime": "0.10.7",
     "install_mode": "explicit",
     "changes": [
       {
-        "fr": "Ajoute un paquet graphique sign\u00e9 pour installer Tao sur Debian et Ubuntu sans terminal.",
-        "en": "Adds a signed graphical package to install Tao on Debian and Ubuntu without a terminal."
+        "fr": "Emp\u00eache le lanceur graphique de remplacer un runtime Tao sain et plus r\u00e9cent.",
+        "en": "Prevents the graphical launcher from replacing a healthy newer Tao runtime."
       },
       {
-        "fr": "Lie ce paquet \u00e0 la release source par un manifeste et une signature Ed25519 distincts.",
-        "en": "Binds that package to the source release through a separate manifest and Ed25519 signature."
+        "fr": "Compare strictement les versions num\u00e9riques et refuse les versions anciennes ou ambigu\u00ebs.",
+        "en": "Strictly compares numeric versions and rejects older or ambiguous versions."
       },
       {
-        "fr": "Conserve l\u2019installateur .run comme solution de repli Linux et comme chemin de mise \u00e0 jour.",
-        "en": "Keeps the .run installer as the Linux fallback and runtime update path."
+        "fr": "Conserve le paquet Debian/Ubuntu sign\u00e9 et le .run comme chemin de mise \u00e0 jour explicite.",
+        "en": "Keeps the signed Debian/Ubuntu package and the .run explicit update path."
       },
       {
         "fr": "Ne migre aucun \u00e9tat priv\u00e9 et ne pr\u00e9tend pas prendre en charge les autres syst\u00e8mes.",
@@ -25,13 +25,13 @@
     "state_migrations": []
   },
   "files": {
-    "TAO_LINUX_0.10.7.run": {
-      "sha256": "7164d8cee7b93ea1b07755b70d568c98e084257d8c909aa6a83d819b57d70a34",
-      "size": 1272545
+    "TAO_LINUX_0.10.8.run": {
+      "sha256": "18e9d4baa9257dd6e7b01896408875c5df5743cd8934c412448d79b94a1f26a7",
+      "size": 1274109
     },
-    "Tao_Linux_0.10.7_source.zip": {
-      "sha256": "53dbb920afc2636043533e32c5e6d3b7a69054fcd3a56270431b8c25e745e43b",
-      "size": 953244
+    "Tao_Linux_0.10.8_source.zip": {
+      "sha256": "8dfb364b5b68a8f6194cd06b2a2136dd8ee6133b97ee532f02134e3e99dfab97",
+      "size": 954417
     }
   }
 }
