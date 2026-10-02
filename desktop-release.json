@@ -1,0 +1,16 @@
+{
+  "schema": "tao.desktop.release.v1",
+  "version": "0.10.7",
+  "release_manifest_sha256": "b69d674dc53a4273bb465fee4b9f2bf054088b0683ca1d9466bc44c07575e530",
+  "package": {
+    "name": "Tao_Linux_0.10.7_all.deb",
+    "sha256": "a56c18e6483f12004198680cb3c5ab4c927c33e676c3865fc76a5ce49634ce13",
+    "size": 944026,
+    "architecture": "all",
+    "supported": [
+      "debian",
+      "ubuntu"
+    ],
+    "install_mode": "graphical_or_package_manager"
+  }
+}

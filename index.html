@@ -68,11 +68,13 @@
           <div id="platform-guidance" class="platform-guidance" aria-live="polite"><p>Choisis ton système pour voir le chemin disponible. Tu peux changer ce choix à tout moment.</p></div>
           <div class="release-state"><span id="release-state" class="state-label">Vérification de la version…</span><p id="release-reason">Les informations de téléchargement sont en cours de lecture.</p></div>
           <div id="linux-downloads" hidden>
-            <a id="installer-link" class="button primary" download hidden>Télécharger pour Linux <span aria-hidden="true">↓</span></a>
+            <a id="desktop-installer-link" class="button primary" download hidden>Installer sur Debian / Ubuntu (.deb) <span aria-hidden="true">↓</span></a>
+            <a id="installer-link" class="button secondary" download hidden>Autre Linux : télécharger (.run) <span aria-hidden="true">↓</span></a>
             <p id="installer-blocked" class="small-note">L’installateur sera proposé lorsqu’une version signée sera disponible.</p>
-            <details id="install-instructions" hidden><summary>Après le téléchargement</summary><p>Dans le dossier téléchargé, ouvre un terminal et lance&nbsp;:</p><pre><code id="install-command">python3 TAO_LINUX_0.10.6.run</code></pre><p>L’installateur indique ensuite l’adresse de ton Tao. Le dialogue demande un Codex CLI installé et connecté à ton propre compte.</p></details>
+            <details id="desktop-install-instructions" hidden><summary>Installer sans terminal</summary><p>Double-clique sur le fichier <code>.deb</code>, ouvre-le avec la logithèque de Debian ou Ubuntu, puis choisis <strong>Installer</strong>. Tao apparaît ensuite dans le menu des applications.</p></details>
+            <details id="install-instructions" hidden><summary>Installation sur un autre Linux</summary><p>Dans le dossier téléchargé, ouvre un terminal et lance&nbsp;:</p><pre><code id="install-command">python3 TAO_LINUX_0.10.7.run</code></pre><p>L’installateur indique ensuite l’adresse de ton Tao. Le dialogue demande un Codex CLI installé et connecté à ton propre compte.</p></details>
           </div>
-          <div class="download-notes"><a id="source-link" class="text-button" download hidden>Consulter les sources <span aria-hidden="true">↓</span></a><a id="signature-link" class="text-button" download hidden>Signature de la version <span aria-hidden="true">↓</span></a><span id="release-version" class="small-note">Tao 0.10.6</span></div>
+          <div class="download-notes"><a id="source-link" class="text-button" download hidden>Consulter les sources <span aria-hidden="true">↓</span></a><a id="signature-link" class="text-button" download hidden>Signature de la version <span aria-hidden="true">↓</span></a><a id="desktop-signature-link" class="text-button" download hidden>Signature du paquet <span aria-hidden="true">↓</span></a><span id="release-version" class="small-note">Tao 0.10.7</span></div>
           <details class="release-details"><summary>Comprendre la disponibilité</summary><p>Une empreinte SHA-256 permet de comparer un fichier. Elle ne prouve pas qui l’a publié. La signature et sa clé de confiance sont nécessaires pour vérifier son origine.</p><p id="artifact-integrity" class="small-note"></p></details>
         </div>
       </div>

@@ -1,37 +1,37 @@
 {
   "schema": "tao.release.v2",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "update": {
-    "minimum_runtime": "0.10.5",
+    "minimum_runtime": "0.10.6",
     "install_mode": "explicit",
     "changes": [
       {
-        "fr": "Recentre le cockpit sur la conversation, le centre courant et une hi\u00e9rarchie de centres lisible.",
-        "en": "Refocuses the cockpit on dialogue, the current center, and a readable center hierarchy."
+        "fr": "Ajoute un paquet graphique sign\u00e9 pour installer Tao sur Debian et Ubuntu sans terminal.",
+        "en": "Adds a signed graphical package to install Tao on Debian and Ubuntu without a terminal."
       },
       {
-        "fr": "R\u00e9unit la fonction, les moyens pr\u00e9par\u00e9s et l\u2019autorit\u00e9 humaine dans un contrat compact.",
-        "en": "Combines the function, prepared equipment, and human authority in a compact contract."
+        "fr": "Lie ce paquet \u00e0 la release source par un manifeste et une signature Ed25519 distincts.",
+        "en": "Binds that package to the source release through a separate manifest and Ed25519 signature."
       },
       {
-        "fr": "Permet de partager une fonction relue sans transmettre compte, secret, outil ou permission.",
-        "en": "Allows a reviewed function to be shared without transferring accounts, secrets, tools, or permissions."
+        "fr": "Conserve l\u2019installateur .run comme solution de repli Linux et comme chemin de mise \u00e0 jour.",
+        "en": "Keeps the .run installer as the Linux fallback and runtime update path."
       },
       {
-        "fr": "Publie Gaia avec un installateur Linux sign\u00e9, explicite et sans migration de l\u2019\u00e9tat priv\u00e9.",
-        "en": "Publishes Gaia with an explicit signed Linux installer and no private-state migration."
+        "fr": "Ne migre aucun \u00e9tat priv\u00e9 et ne pr\u00e9tend pas prendre en charge les autres syst\u00e8mes.",
+        "en": "Migrates no private state and makes no support claim for other operating systems."
       }
     ],
     "state_migrations": []
   },
   "files": {
-    "TAO_LINUX_0.10.6.run": {
-      "sha256": "82768956eb8448c16cd889d54c7e9b23c618a7d7dd7c606015568a543f9ab267",
-      "size": 1265301
+    "TAO_LINUX_0.10.7.run": {
+      "sha256": "7164d8cee7b93ea1b07755b70d568c98e084257d8c909aa6a83d819b57d70a34",
+      "size": 1272545
     },
-    "Tao_Linux_0.10.6_source.zip": {
-      "sha256": "7d9948f0c65e836b6422a2399108fe1cc478dd3df10005cf3801b0f97d66a803",
-      "size": 947809
+    "Tao_Linux_0.10.7_source.zip": {
+      "sha256": "53dbb920afc2636043533e32c5e6d3b7a69054fcd3a56270431b8c25e745e43b",
+      "size": 953244
     }
   }
 }

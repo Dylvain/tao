@@ -1,27 +1,31 @@
 {
   "schema": "gaia.static-site.v1",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "mode": "signed",
   "files": {
     "SHA256SUMS": {
-      "sha256": "84994fdbfb33518dcbedacbb19728193a976bf29c1cf47fec707093c8bcda22e",
-      "size": 181
+      "sha256": "dfe107d3c186bf58da0e05f77f124b171217cee8d519170edd5d6e3d155de99b",
+      "size": 272
     },
-    "TAO_LINUX_0.10.6.run": {
-      "sha256": "82768956eb8448c16cd889d54c7e9b23c618a7d7dd7c606015568a543f9ab267",
-      "size": 1265301
+    "TAO_LINUX_0.10.7.run": {
+      "sha256": "7164d8cee7b93ea1b07755b70d568c98e084257d8c909aa6a83d819b57d70a34",
+      "size": 1272545
     },
-    "Tao_Linux_0.10.6_source.zip": {
-      "sha256": "7d9948f0c65e836b6422a2399108fe1cc478dd3df10005cf3801b0f97d66a803",
-      "size": 947809
+    "Tao_Linux_0.10.7_all.deb": {
+      "sha256": "a56c18e6483f12004198680cb3c5ab4c927c33e676c3865fc76a5ce49634ce13",
+      "size": 944026
+    },
+    "Tao_Linux_0.10.7_source.zip": {
+      "sha256": "53dbb920afc2636043533e32c5e6d3b7a69054fcd3a56270431b8c25e745e43b",
+      "size": 953244
     },
     "_headers": {
       "sha256": "8e70c9b3b2f6ffcece798f3c57c56740d9cc1d008a60f512f50533e9a3500c94",
       "size": 389
     },
     "app.js": {
-      "sha256": "170af91f56e8a00db81e588d99d91764a9c4a9912ae3ed315958c32b96a14878",
-      "size": 23268
+      "sha256": "58ae71bb6d37125661daf2bebda5389195541aeb02dadb63cca914c58f354ab4",
+      "size": 25797
     },
     "birth.json": {
       "sha256": "a1bdcf63cf0d2e8aec527ef26625b26f5011b2ef123290d29400359cd23fff94",
@@ -31,33 +35,45 @@
       "sha256": "4f35154a614a87cf07f54f3e89eb74a0c30527780c10ae623287f22def76eaac",
       "size": 9528
     },
+    "desktop-release.json": {
+      "sha256": "05d612ff7ca1dee7959be0bf105d1ae2c48f25330ae8dff387a18258a2cd482e",
+      "size": 458
+    },
+    "desktop-release.sig": {
+      "sha256": "b81b8b1afc96e48da9411ddf1859d6822f300eb5e5563347da12d4ba7b0d8376",
+      "size": 64
+    },
+    "desktop-signing.json": {
+      "sha256": "7a4a26d028ea8205f085f324f7dc385cbbee9c22c7bcf7633cfda6790cf1ae56",
+      "size": 300
+    },
     "index.html": {
-      "sha256": "db30d4fb8fa5cb8dcd2ee253a5c7cbd42eb553de6fd226de5506fff933ce8610",
-      "size": 15812
+      "sha256": "f4022cc506d75d65ee4a92c5e5e827a61e8f6e3fd699f286827e42dfe22e3087",
+      "size": 16427
     },
     "portal.json": {
-      "sha256": "f8e2713fd270c7d6768410a532c8e90377edd3196ae3790bb3ac90294a71d34f",
-      "size": 636
+      "sha256": "42b9828b3ac7fd94392a0ebfa0320dde2caf3aa0b4eb66e4dbd3be3d9bb7d054",
+      "size": 1026
     },
     "release-public.pem": {
       "sha256": "df3f560cdf81d257dfc7bdc527756f51250423d046c3f2feb63a546725f73e0d",
       "size": 113
     },
     "release.json": {
-      "sha256": "a5f43fadea3cab372ca696f3a662b2a39b709cb6ec923dc2e16a1abe54b3f6d7",
-      "size": 1480
+      "sha256": "b69d674dc53a4273bb465fee4b9f2bf054088b0683ca1d9466bc44c07575e530",
+      "size": 1422
     },
     "release.sig": {
-      "sha256": "1f71c4651da8341909ce71d14723b93e6d37dbd5a3e7086cdc61465109c9af79",
+      "sha256": "735eb8f08ffa1336c3d36d58db5c4c02da918e6915807d6771b28e984b99cec7",
       "size": 64
     },
     "signing.json": {
-      "sha256": "aae66114f0eb4d1259fd2e3072584137c7fbb155ff346fc0362c2e138a056b8e",
+      "sha256": "7eef85bf3e3f9a9d89010a83b82d0c4932dc309f9a90e895dd84301cb022f89b",
       "size": 284
     },
     "style.css": {
-      "sha256": "3c434a0715d6d8be4f1055c2901e8efbaf1ebc18ac368ada1a6c326d22f1a5b7",
-      "size": 17390
+      "sha256": "2c05cc2ef888c591d6627aa48e4a62d14dda14b97673d33622ada4bf8df977f6",
+      "size": 17437
     }
   }
 }

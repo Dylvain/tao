@@ -2,7 +2,7 @@
 (function (root) {
   'use strict';
 
-  const VERSION = '0.10.6';
+  const VERSION = '0.10.7';
   const CATEGORIES = Object.freeze({comprehension: 'Comprendre', connection: 'Relier', integration: 'Améliorer'});
   const SYMBOLS = Object.freeze({comprehension: 'α', connection: '∿', integration: '↗'});
 
@@ -29,23 +29,39 @@
     return './' + path;
   }
 
-  function releaseView(config, manifest) {
-    const preview = {version: VERSION, signed: false, reason: 'La qualification publique et la signature de cette version restent à confirmer. L’installateur est indisponible.', installer: null, source: null, signature: null};
+  function releaseView(config, manifest, desktopManifest) {
+    const preview = {version: VERSION, signed: false, reason: 'La qualification publique et la signature de cette version restent à confirmer. L’installateur est indisponible.', installer: null, desktopInstaller: null, source: null, signature: null, desktopSignature: null};
     if (!config || !manifest || config.version !== VERSION || manifest.version !== VERSION || !manifest.files || typeof manifest.files !== 'object') return preview;
-    function artifact(record) {
+    function artifact(record, records) {
       if (!record || typeof record.name !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(record.name)) return null;
       const href = localAsset(record.url);
-      const metadata = manifest.files[record.name];
+      const metadata = records[record.name];
       if (!href || href.split('/').pop() !== record.name || !metadata || !/^[a-f0-9]{64}$/.test(metadata.sha256) || !Number.isSafeInteger(metadata.size) || metadata.size <= 0) return null;
       return {name: record.name, href, sha256: metadata.sha256, size: metadata.size};
     }
-    const source = artifact(config.source_archive);
-    const installer = artifact(config.installer);
+    function signatureView(value, expectedManifest, expectedSignature, expectedMetadata) {
+      if (!exactKeys(value, ['manifest', 'signature', 'metadata', 'public_key', 'public_key_sha256'])) return null;
+      if (localAsset(value.manifest) !== './' + expectedManifest || localAsset(value.signature) !== './' + expectedSignature || localAsset(value.metadata) !== './' + expectedMetadata || localAsset(value.public_key) !== './release-public.pem' || !/^[a-f0-9]{64}$/.test(value.public_key_sha256)) return null;
+      return {href: './' + expectedSignature, publicKeySha256: value.public_key_sha256};
+    }
+    const source = artifact(config.source_archive, manifest.files);
+    const installer = artifact(config.installer, manifest.files);
     const signature = config.signature;
-    const hasSignature = signature && localAsset(signature.manifest) === './release.json' && localAsset(signature.signature) && localAsset(signature.metadata) && localAsset(signature.public_key) && /^[a-f0-9]{64}$/.test(signature.public_key_sha256);
-    const signed = config.download_status === 'signed' && Boolean(installer && hasSignature);
+    const mainProof = signature && signatureView(signature, 'release.json', 'release.sig', 'signing.json');
+    const signed = config.download_status === 'signed' && Boolean(installer && mainProof);
+    let desktopInstaller = null, desktopProof = null;
+    if (signed && desktopManifest && exactKeys(desktopManifest, ['schema', 'version', 'release_manifest_sha256', 'package']) && desktopManifest.schema === 'tao.desktop.release.v1' && desktopManifest.version === VERSION && /^[a-f0-9]{64}$/.test(desktopManifest.release_manifest_sha256)) {
+      const packageRecord = desktopManifest.package;
+      const expectedName = 'Tao_Linux_' + VERSION + '_all.deb';
+      const packageValid = exactKeys(packageRecord, ['name', 'sha256', 'size', 'architecture', 'supported', 'install_mode']) && packageRecord.name === expectedName && packageRecord.architecture === 'all' && sameList(packageRecord.supported, ['debian', 'ubuntu']) && packageRecord.install_mode === 'graphical_or_package_manager';
+      if (packageValid) {
+        desktopInstaller = artifact(config.desktop_installer, {[expectedName]: packageRecord});
+        desktopProof = signatureView(config.desktop_signature, 'desktop-release.json', 'desktop-release.sig', 'desktop-signing.json');
+        if (!desktopInstaller || !desktopProof || desktopProof.publicKeySha256 !== mainProof.publicKeySha256) { desktopInstaller = null; desktopProof = null; }
+      }
+    }
     const reason = typeof config.reason === 'string' && config.reason.length <= 1600 && config.reason.trim() ? config.reason.trim() : preview.reason;
-    return {version: VERSION, signed, reason, installer: signed ? installer : null, source, signature: signed ? localAsset(signature.signature) : null};
+    return {version: VERSION, signed, reason, installer: signed ? installer : null, desktopInstaller, source, signature: signed ? mainProof.href : null, desktopSignature: desktopProof ? desktopProof.href : null};
   }
 
   function plain(value, max) { return typeof value === 'string' && value.trim().length > 0 && value.length <= max; }
@@ -183,7 +199,7 @@
       const platform = byId('platform').value;
       const panel = byId('platform-guidance');
       panel.replaceChildren();
-      const text = platform === 'linux' ? 'Installe Tao 0.10.6 sur cet ordinateur Linux. Python 3.9 ou plus est nécessaire. Le dialogue et l’atelier utilisent ton propre compte Codex.' : platform ? 'Tu peux piloter un Tao accessible depuis le navigateur de cet appareil. Le moteur d’exécution local est fourni pour Linux uniquement ; aucun installateur natif n’est livré pour ce système.' : 'Choisis ton système pour voir le chemin disponible. Tu peux changer ce choix à tout moment.';
+      const text = platform === 'linux' ? 'Sur Debian ou Ubuntu, installe Tao 0.10.7 comme une application. Sur un autre Linux, l’installateur universel reste disponible. Python 3.9 ou plus est nécessaire.' : platform ? 'Tu peux piloter un Tao accessible depuis le navigateur de cet appareil. Le moteur d’exécution local est fourni pour Linux uniquement ; aucun installateur natif n’est livré pour ce système.' : 'Choisis ton système pour voir le chemin disponible. Tu peux changer ce choix à tout moment.';
       panel.append(element(document, 'p', text));
       if (platform && platform !== 'linux') {
         const link = element(document, 'a', 'Retrouver une installation existante ↗', 'text-button'); link.href = '#retrouver'; panel.append(link);
@@ -196,20 +212,25 @@
       byId('release-state').classList.toggle('signed', release.signed);
       byId('release-reason').textContent = release.reason;
       byId('release-version').textContent = 'Tao ' + release.version;
-      [['installer-link', release.installer], ['source-link', release.source]].forEach(([id, asset]) => {
+      [['desktop-installer-link', release.desktopInstaller], ['installer-link', release.installer], ['source-link', release.source]].forEach(([id, asset]) => {
         const link = byId(id); link.hidden = !asset;
         if (asset) { link.href = asset.href; link.download = asset.name; } else link.removeAttribute('href');
       });
       byId('installer-blocked').hidden = release.signed;
-      byId('install-instructions').hidden = !release.signed;
+      byId('desktop-install-instructions').hidden = !release.desktopInstaller;
+      byId('install-instructions').hidden = !release.installer;
       if (release.installer) byId('install-command').textContent = 'python3 ' + release.installer.name;
       byId('signature-link').hidden = !release.signature;
       if (release.signature) byId('signature-link').href = release.signature;
-      byId('artifact-integrity').textContent = release.source ? 'Sources proposées pour lecture et revue. Empreinte SHA-256 : ' + release.source.sha256 + '. ' + (release.signed ? 'La publication annonce une signature ; ce navigateur ne la vérifie pas cryptographiquement.' : 'Ces sources ne sont pas présentées comme une version signée.') : 'Aucune archive qualifiée n’est proposée par cette page pour le moment.';
+      byId('desktop-signature-link').hidden = !release.desktopSignature;
+      if (release.desktopSignature) byId('desktop-signature-link').href = release.desktopSignature;
+      const desktopIntegrity = release.desktopInstaller ? ' Paquet Debian/Ubuntu : ' + release.desktopInstaller.sha256 + '.' : '';
+      byId('artifact-integrity').textContent = release.source ? 'Sources proposées pour lecture et revue. Empreinte SHA-256 : ' + release.source.sha256 + '.' + desktopIntegrity + ' ' + (release.signed ? 'La publication annonce une signature ; ce navigateur ne la vérifie pas cryptographiquement.' : 'Ces sources ne sont pas présentées comme une version signée.') : 'Aucune archive qualifiée n’est proposée par cette page pour le moment.';
       showPlatform();
     }
     Promise.all([publicJSON('./portal.json'), publicJSON('./release.json')]).then(([config, manifest]) => {
-      release = releaseView(config, manifest); showRelease();
+      const desktop = config && config.desktop_installer ? publicJSON('./desktop-release.json').catch(() => null) : Promise.resolve(null);
+      return desktop.then(desktopManifest => { release = releaseView(config, manifest, desktopManifest); showRelease(); });
     }).catch(() => { showRelease(); byId('release-reason').textContent = 'Les informations de version sont indisponibles. Aucun installateur ne peut être proposé pour le moment.'; });
     publicJSON('./birth.json').then(data => {
       const contract = readBirthContract(data);
